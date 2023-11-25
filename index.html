@@ -12,9 +12,10 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <link href="css/carousel.css" rel="stylesheet">
+
     </head>
 
     <body>
@@ -67,7 +68,7 @@
                     </div>
                     
                     <div class="hero row align-items-center">
-                        <div class="col-md-7">
+                        <!-- <div class="col-md-7">
                             <h2>BLEEDING <span class="danger">RHYMES</span> PRODUCTION</h2>
                             <p>Experience the power of spoken word poetry, captivating marketing strategies, and professional voice overs.</p>
                             <a class="btn" href="">learn more </a>
@@ -76,7 +77,104 @@
                             <div>
                                 <img style="height: 415px;width: 400px;border-radius: 20px/30px;" src="img/header-1.jpg" alt="Image">
                             </div>
-                        </div>
+                        </div> -->
+
+                        <div id="myCarousel" class="carousel slide" data-interval="false">
+                            <ol class="carousel-indicators">
+                              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                              <li data-target="#myCarousel" data-slide-to="1"></li>
+                              <li data-target="#myCarousel" data-slide-to="2"></li>
+                              <!-- Add more indicators as needed -->
+                              <li data-target="#myCarousel" data-slide-to="3"></li>
+                              <li data-target="#myCarousel" data-slide-to="4"></li>
+                              <li data-target="#myCarousel" data-slide-to="5"></li>
+                              <li data-target="#myCarousel" data-slide-to="6"></li>
+                            </ol>
+                            
+                      
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <video controls autoplay loop muted class="myvid" id="player">
+                                  <source
+                                    src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                                    type="video/mp4"
+                                  />
+                                </video>
+                              </div>
+                      
+                              <div class="carousel-item">
+                                <video controls autoplay class="myvid" id="player2">
+                                  <source
+                                    src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                                    type="video/mp4"
+                                  />
+                                </video>
+                              </div>
+                      
+                              <div class="carousel-item">
+                                <video controls autoplay class="myvid" id="player2">
+                                  <source
+                                    src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                                    type="video/mp4"
+                                  />
+                                </video>
+                              </div>
+                              <div class="carousel-item">
+                                  <video controls autoplay class="myvid" id="player2">
+                                    <source
+                                      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                                      type="video/mp4"
+                                    />
+                                  </video>
+                                </div>
+                        
+                                <div class="carousel-item">
+                                  <video controls autoplay class="myvid" id="player2">
+                                    <source
+                                      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                                      type="video/mp4"
+                                    />
+                                  </video>
+                                </div>
+                                <div class="carousel-item">
+                                  <video controls autoplay class="myvid" id="player2">
+                                    <source
+                                      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                                      type="video/mp4"
+                                    />
+                                  </video>
+                                </div>
+                        
+                                <div class="carousel-item">
+                                  <video controls autoplay class="myvid" id="player2">
+                                    <source
+                                      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                                      type="video/mp4"
+                                    />
+                                  </video>
+                                </div>
+                              
+                            </div>
+                      
+                            <a
+                              class="carousel-control-prev"
+                              href="#myCarousel"
+                              role="button"
+                              data-slide="prev"
+                            >
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Vorige</span>
+                            </a>
+                            <a
+                              class="carousel-control-next"
+                              href="#myCarousel"
+                              role="button"
+                              data-slide="next"
+                            >
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Volgende</span>
+                            </a>
+                          </div>
                     </div>
                 </div>
             </div>
@@ -273,9 +371,15 @@
         <script src="lib/easing/easing.min.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
         <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-
+        <script src="lib/lightbox/js/lightbox.min.js"></script>      
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"
+      ></script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/carousel.js">          
+          </script>
     </body>
 </html>

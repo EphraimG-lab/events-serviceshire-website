@@ -1,0 +1,25 @@
+#myCarousel {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: 9% !important;
+}
+
+.carousel-inner {
+  background: #111;
+}
+
+.carousel-indicators {
+  bottom: -13px !important;
+}
+
+.carousel-item {
+  padding-bottom: 25px;
+}
+
+video {
+  width: 100%;
+}
