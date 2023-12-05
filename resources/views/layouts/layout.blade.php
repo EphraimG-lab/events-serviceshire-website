@@ -69,7 +69,11 @@
                                     <a href="/" class="nav-item nav-link active">Home</a>
                                     <a href="/about" class="nav-item nav-link">About</a>
                                     <a href="/service" class="nav-item nav-link">Services</a>
+                                    <a href="/events" class="nav-item nav-link">Events</a>
                                     <a href="/contact" class="nav-item nav-link">Contact</a>
+                                    <a href="/sign-in" class="nav-item nav-link">Sign In</a>
+                                    <a href="/sign-up" class="nav-item nav-link">Sign Up</a>
+
                                 </div>
                             </div>
                         </div>
@@ -104,11 +108,14 @@
                             <a href="/about">About </a>
                             <a href="/service">Services</a>
                             <a href="/contact">Contact</a>
+                            <a href="/events">Events</a>
+                            <a href="/sign-in">Sign In</a>
+                            <a href="/sign-up">Sign Up</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="footer-link">
-                            <h2>Useful Link</h2>
+                            <h2>Customer Side</h2>
                             <a href="/testimonials">Clients Review</a>
                             <a href="/customer-support">Customer Support</a>
                             <a href="/f">FAQs</a>

@@ -15,11 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Bleeding Rhymes  about,contact,index,service
+// Bleeding Rhymes  about,contact,index,service,sign in ,sign up
 Route::get('/about', [BleedingRhymesController::class, 'about']);
 
 Route::get('/contact', [BleedingRhymesController::class, 'contact']);
 
+Route::get('/events', [BleedingRhymesController::class, 'events']);
+
 Route::get('/', [BleedingRhymesController::class, 'index']);
 
 Route::get('/service', [BleedingRhymesController::class, 'service']);
+
+Route::get('/sign-in', [BleedingRhymesController::class, 'login']);
+
+Route::post('/sign-in', [BleedingRhymesController::class, 'store']);
+
+Route::get('/sign-up', [BleedingRhymesController::class, 'register']);
+
