@@ -5,7 +5,7 @@
     <!-- <div class="col-md-7">
             <h2>BLEEDING <span class="danger">RHYMES</span> PRODUCTION</h2>
             <p>Experience the power of spoken word poetry, captivating marketing strategies, and professional voice overs.</p>
-            <a class="btn" href="">learn more </a>
+            <a class="btn" href="">Book Now </a>
         </div>
         <div class="col-md-5">
             <div>
@@ -152,7 +152,7 @@
                 Leave the planning to us and enjoy a memorable and hassle-
                 free event. From concept to execution, we've got you covered.
             </p>
-            <a class="btn" href="">Learn More</a>
+            <a class="btn" href="">Book Now</a>
         </div>
     </div>
     <div class="col-lg-3 col-md-6">
@@ -163,7 +163,7 @@
                 Experience the power of words through captivating performances
                 that inspire, provoke thought, and leave a lasting impact.
             </p>
-            <a class="btn" href="">Learn More</a>
+            <a class="btn" href="">Book Now</a>
         </div>
     </div>
     <div class="col-lg-3 col-md-6">
@@ -174,7 +174,7 @@
                 Ensure a seamless event flow and engage your audience with our
                 professional and experienced Matter of Ceremonies
             </p>
-            <a class="btn" href="">Learn More</a>
+            <a class="btn" href="">Book Now</a>
         </div>
     </div>
     <div class="col-lg-3 col-md-6">
@@ -186,7 +186,7 @@
                 achieve your business goals with our tailored marketing
                 strategies.
             </p>
-            <a class="btn" href="">Learn More</a>
+            <a class="btn" href="">Book Now</a>
         </div>
     </div>
     <div class="col-lg-3 col-md-6">
@@ -197,7 +197,7 @@
                 Make your project come alive with professional voice over
                 services that captivate and engage your audience.
             </p>
-            <a class="btn" href="">Learn More</a>
+            <a class="btn" href="">Book Now</a>
         </div>
     </div>
 </div>
@@ -227,7 +227,7 @@
                 Curabitur facilisis ornare velit non vulputate. Aliquam metus
                 tortor, auctor id gravida condimentum
             </p>
-            <a class="btn" href="">Learn More</a>
+            <a class="btn" href="">Book Now</a>
         </div>
     </div>
     <div class="col-lg-4 col-md-6">
@@ -245,7 +245,7 @@
                 Curabitur facilisis ornare velit non vulputate. Aliquam metus
                 tortor, auctor id gravida condimentum
             </p>
-            <a class="btn" href="">Learn More</a>
+            <a class="btn" href="">Book Now</a>
         </div>
     </div>
     <div class="col-lg-4 col-md-6">
@@ -263,7 +263,7 @@
                 Curabitur facilisis ornare velit non vulputate. Aliquam metus
                 tortor, auctor id gravida condimentum
             </p>
-            <a class="btn" href="">Learn More</a>
+            <a class="btn" href="">Book Now</a>
         </div>
     </div>
 </div>

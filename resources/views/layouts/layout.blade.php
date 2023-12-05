@@ -73,6 +73,14 @@
                                     <a href="/contact" class="nav-item nav-link">Contact</a>
                                     <a href="/sign-in" class="nav-item nav-link">Sign In</a>
                                     <a href="/sign-up" class="nav-item nav-link">Sign Up</a>
+                                    <a href="/cart" class="nav-item nav-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                                            <span class="badge badge-pill badge-danger"width="10" height="10">10</span>
+                                        </svg>
+                                        
+                                    </a>
+                                    
 
                                 </div>
                             </div>
@@ -118,7 +126,7 @@
                             <h2>Customer Side</h2>
                             <a href="/testimonials">Clients Review</a>
                             <a href="/customer-support">Customer Support</a>
-                            <a href="/f">FAQs</a>
+                            <a href="/fAQS">FAQs</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
