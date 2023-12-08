@@ -84,14 +84,16 @@
                                     <a href="/contact" class="nav-item nav-link">Contact</a>
 
                                     @auth
+                                    
+                                    <a href="/profile" class="nav-item nav-link">Profile</a>
+
                                         {{-- <a href="/log-out" class="nav-item nav-link">
-                                             Sign Out</a>                                               --}}
+                                             Sign Out</a>     
+                                            --}}
                                         <button type="button" class="nav-item nav-link btn" data-toggle="modal"
                                             data-target="#logoutModal">
                                             Sign Out
                                         </button>
-
-                                        <a href="/profile" class="nav-item nav-link">Profile</a>
                                     @else
                                         <a href="/sign-in" class="nav-item nav-link">Sign In</a>
                                         <a href="/sign-up" class="nav-item nav-link">Sign Up</a>
@@ -125,7 +127,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-dismiss="modal">Cancel</button>
-                                    <form method="POST" action="/log-out">
+                                    <form method="POST" action="/sign-out">
                                         @csrf
                                         <button type="submit" class="btn btn-danger">Logout</button>
                                     </form>
@@ -231,7 +233,7 @@
     <script>
 
         //JavaScript Code for Coursel to Play,Pause and slide across videos
-        
+
         let allVids = $("#myCarousel").find(".carousel-item");
 
         allVids.each(function(index, el) {
