@@ -2,8 +2,8 @@
 @section('content')
     <!-- Header End -->
     <!-- Service Start -->
-    <div class="service">
-        <div class="container">
+    <x-service>
+        <x-container-div>
             <div class="section-header">
                 <h2>Our Services</h2>
             </div>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </x-container-div>
+    </x-service>
     <!-- Service End -->
 @endsection

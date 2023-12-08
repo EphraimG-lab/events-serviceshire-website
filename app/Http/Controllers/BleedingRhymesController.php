@@ -25,23 +25,9 @@ class BleedingRhymesController extends Controller
         return view('bleeding_rhymes.service');
     }
 
-     // Show Bleeding Rhymes Sign in Page
-     public function login() {
-        return view('bleeding_rhymes.sign-in');
-    }
      // Show Bleeding Rhymes Events Page
      public function events() {
         return view('bleeding_rhymes.events');
     }
-     // Show Bleeding Rhymes Sign Up  Page
-     public function register() {
-        return view('bleeding_rhymes.sign-up');
-    }
-
-     // Store Bleeding Rhymes User in a database
-     public function store() {
-
-        //
-    }
-    
+   
 }

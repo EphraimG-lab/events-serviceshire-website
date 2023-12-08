@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 @section('content')
     <!-- Contact Start -->
-    <div class="contact">
-        <div class="container">
+    <x-contact>
+        <x-container-div>
             <div class="section-header">
                 <h6 class="danger">YOU CAN GET INTOUCH WITH US THROUGH OUR SOCIAL MEDIA HANDLES OR SEND A SHORT
                     MESSAGE THROUGH THE FOLLLOWING</h6>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </x-container-div>
+    </x-contact>
     <!-- Contact End -->
 @endsection

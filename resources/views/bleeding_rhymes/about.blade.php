@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 @section('content')
     <!-- About Start -->
-    <div class="about">
-        <div class="container">
+    <x-about>
+        <x-container-div>
             <div class="row">
                 <div class="col-lg-5 col-md-6">
                     <div class="about-img">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </x-container-div>
+    </x-about>
     <!-- About End -->
 @endsection
