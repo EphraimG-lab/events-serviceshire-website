@@ -27,7 +27,7 @@
 <body>
     <x-container-div>
 
-       <x-flash-message />
+        <x-flash-message />
 
     </x-container-div>
     <div class="wrapper">
@@ -43,8 +43,14 @@
                             </a>
                         </div>
                     </div>
+
                     <div class="col-lg-9">
                         <div class="topbar">
+                            <div class="topbar-col">
+                                @auth
+                                    Welcome {{ auth()->user()->username }}
+                                @endauth
+                            </div>
                             <div class="topbar-col">
                                 <a href="tel:+012 345 67890"><i class="fa fa-phone-alt"></i>+254768587711</a>
                             </div>
@@ -76,8 +82,21 @@
                                     <a href="/service" class="nav-item nav-link">Services</a>
                                     <a href="/events" class="nav-item nav-link">Events</a>
                                     <a href="/contact" class="nav-item nav-link">Contact</a>
-                                    <a href="/sign-in" class="nav-item nav-link">Sign In</a>
-                                    <a href="/sign-up" class="nav-item nav-link">Sign Up</a>
+
+                                    @auth
+                                        {{-- <a href="/log-out" class="nav-item nav-link">
+                                             Sign Out</a>                                               --}}
+                                        <button type="button" class="nav-item nav-link btn" data-toggle="modal"
+                                            data-target="#logoutModal">
+                                            Sign Out
+                                        </button>
+
+                                        <a href="/profile" class="nav-item nav-link">Profile</a>
+                                    @else
+                                        <a href="/sign-in" class="nav-item nav-link">Sign In</a>
+                                        <a href="/sign-up" class="nav-item nav-link">Sign Up</a>
+
+                                    @endauth
                                     <a href="/cart" class="nav-item nav-link">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                             fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
@@ -86,12 +105,36 @@
                                         </svg>
                                         <span class="badge badge-pill badge-danger">0</span>
                                     </a>
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {{-- Pop Up Form Modal for user to logout --}}
+                    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Confirm Logout</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to log out?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-dismiss="modal">Cancel</button>
+                                    <form method="POST" action="/log-out">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">Logout</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- Pop Up Modal end here --}}
+
                 </div>
             </div>
         </div>
@@ -186,6 +229,9 @@
     </script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script>
+
+        //JavaScript Code for Coursel to Play,Pause and slide across videos
+        
         let allVids = $("#myCarousel").find(".carousel-item");
 
         allVids.each(function(index, el) {
@@ -193,7 +239,7 @@
                 $(this).find("video")[0].pause();
             }
         });
-
+     
         $("#myCarousel").on("slide.bs.carousel", function(ev) {
             let slides = $(this).find(".carousel-item");
             let pvid = slides[ev.from].querySelectorAll("video")[0];
@@ -205,6 +251,14 @@
             if (isPlaying) {
                 pvid.pause();
             }
+        });
+
+        //JavaScript Code to trigger the modal Pop Up
+
+        $(document).ready(function() {
+            $('#logoutModal').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+            });
         });
     </script>
 </body>

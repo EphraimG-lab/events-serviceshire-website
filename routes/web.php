@@ -34,10 +34,17 @@ Route::get('/', [BleedingRhymesController::class, 'index']);
 Route::get('/service', [BleedingRhymesController::class, 'service']);
 
 
+//sign in user
 Route::get('/sign-in', [UserController::class, 'login']);
 
-Route::post('/login', [UserController::class, 'retrieve']);
 
+// Log User Out
+Route::get('/log-out', [UserController::class, 'logout']);
+
+Route::post('/sign-out', [UserController::class, 'signout']);
+
+//Show user register form page
 Route::get('/sign-up', [UserController::class, 'register']);
 
+//post user data to database
 Route::post('/register', [UserController::class, 'store']);

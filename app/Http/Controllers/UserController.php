@@ -48,4 +48,21 @@ class UserController extends Controller
         //
     }
 
+    // Logout User
+
+    public function logout()
+    {
+        return view('logout');
+    }
+    
+    public function signout(Request $request)
+    {
+        auth()->logout();
+  
+        $request->session()->invalidate();
+        //   $request->session()->regenerateToken();
+  
+        return redirect('/')->with('success', 'You have been logged out!');
+    }
+
 }
