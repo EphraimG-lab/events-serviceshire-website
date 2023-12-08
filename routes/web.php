@@ -23,6 +23,7 @@ use App\Http\Controllers\BleedingRhymesController;
 // update -update form
 // destory delete
 // Bleeding Rhymes  about,contact,index,service,sign in ,sign up
+
 Route::get('/about', [BleedingRhymesController::class, 'about']);
 
 Route::get('/contact', [BleedingRhymesController::class, 'contact']);
@@ -34,13 +35,14 @@ Route::get('/', [BleedingRhymesController::class, 'index']);
 Route::get('/service', [BleedingRhymesController::class, 'service']);
 
 
-//sign in user
+//sign in user Form Page
 Route::get('/sign-in', [UserController::class, 'login']);
 
 
-// Log User Out
+// Sign User Out
 Route::get('/log-out', [UserController::class, 'logout']);
 
+//Sign out User
 Route::post('/sign-out', [UserController::class, 'signout']);
 
 //Show user register form page

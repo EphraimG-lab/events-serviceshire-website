@@ -90,7 +90,7 @@
                                         {{-- <a href="/log-out" class="nav-item nav-link">
                                              Sign Out</a>     
                                             --}}
-                                        <button type="button" class="nav-item nav-link btn" data-toggle="modal"
+                                        <button type="submit" class="nav-item nav-link btn" data-toggle="modal"
                                             data-target="#logoutModal">
                                             Sign Out
                                         </button>
@@ -128,7 +128,9 @@
                                     <button type="button" class="btn btn-secondary"
                                         data-dismiss="modal">Cancel</button>
                                     <form method="POST" action="/sign-out">
+
                                         @csrf
+
                                         <button type="submit" class="btn btn-danger">Logout</button>
                                     </form>
                                 </div>

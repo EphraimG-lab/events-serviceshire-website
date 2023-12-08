@@ -10,15 +10,20 @@
             <div class="row">
                 <div class="col-md-8 text-center ml-4 mr-4">
                     <div class="contact-form">
-                        <form action="/login" method="POST">
+                        <form action="/users/login" method="POST">
+
+                             @csrf
+
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email Address" required="required" value={{old('email')}}>
+
+                                <input type="email" class="form-control" name="email" placeholder="Your Email Address" required="required" value="{{old('email')}}">
                                 @error('email')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
+
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Your Password" required="required" value={{old('password')}}>
+                                <input type="password" class="form-control" name="password" placeholder="Your Password" required="required" value="{{old('password')}}">
                                 @error('password')
                                     <div class="text-danger">{{ $message}}</div>
                                 @enderror
@@ -27,6 +32,12 @@
                                 <button class="btn " type="submit" name="sign-in">Sign In</button>
                             </div>
                         </form>
+
+                        <span>
+                            <div class ="text-danger">
+                                Don't have an account ? <a href="/sign-up">Sign Up</a>
+                            </p>
+                        </span>
                     </div>
                 </div>
             </div>

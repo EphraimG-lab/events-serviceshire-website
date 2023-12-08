@@ -17,7 +17,7 @@
                             <div class="form-group">
 
                                 <input type="text" class="form-control" name="firstname" placeholder="Your First name"
-                                    required="required" value={{old('firstname')}}>
+                                    required="required" value="{{old('firstname')}}">
 
                                 @error('firstname')
                                     <div class ="text-danger">{{ $message }}</p>
@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="lastname" placeholder="Your Last name"
-                                    required="required"  value={{old('lastname')}}>
+                                    required="required"  value="{{old('lastname')}}">
 
 
                                 @error('lastname')
@@ -36,7 +36,7 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="username" placeholder="Username"
-                                    required="required"  value={{old('username')}}>
+                                    required="required"  value="{{old('username')}}">
 
                                 @error('username')
                                     <div class ="text-danger">{{ $message }}</p>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" placeholder="Your Email Address"
-                                    required="required"  value={{old('email')}}>
+                                    required="required"  value="{{old('email')}}">
 
                                 @error('email')
                                     <div class="text-danger">{{ $message }}</div>
@@ -54,7 +54,7 @@
 
                             <div class="form-group">
                                 <input type="text" class="form-control" name="contact"
-                                    placeholder="contact e.g. +254 723 4678 99" required="required" value={{old('contact')}}>
+                                    placeholder="contact e.g. +254 723 4678 99" required="required" value="{{old('contact')}}">
 
                                 @error('contact')
                                     <div class ="text-danger">{{ $message }}</p>
@@ -71,7 +71,7 @@
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control" name="password_confirmation"
-                                    placeholder="Confirm Password" required="required" value={{old('password_confirmation')}}>
+                                    placeholder="Confirm Password" required="required" value="{{old('password_confirmation')}}">
 
                                 @error('password_confirmation')
                                     <div class ="text-danger">{{ $message }}</p>
@@ -83,7 +83,7 @@
                             </div>
                             <span>
                                 <div class ="text-danger">
-                                    Already have an account? <a href="/sign-in">Login</a>
+                                    Already have an account ? <a href="/sign-in">Sign In</a>
                                 </p>
                             </span>
                         </form>
