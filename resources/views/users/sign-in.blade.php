@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-8 text-center ml-4 mr-4">
                     <div class="contact-form">
-                        <form action="/users/login" method="POST">
+                        <form action="/users/authenticate" method="POST">
 
                              @csrf
 

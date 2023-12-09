@@ -42,10 +42,24 @@ class UserController extends Controller
     {
         return view('users.sign-in');
     }
-    //retrieve User Details Bleeding Rhymes User After Sign In
-    public function retrieve()
+    //Authenticate User Details Bleeding Rhymes User After Sign In
+    public function authenticate(Request $request)
     {
-        //
+        $formFields = $request->validate([
+            // 'username' =>['required','min:3'],
+            
+            'email' =>['required','email'],
+            'password' => 'required'
+             
+          ]);  
+
+          if (auth()->attempt($formFields)) {
+            $request->session()->regenerate();
+
+            return redirect('/')->with('success', 'You are now logged in!');
+        }
+
+        return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
     }
 
     // Logout User

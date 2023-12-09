@@ -38,6 +38,8 @@ Route::get('/service', [BleedingRhymesController::class, 'service']);
 //sign in user Form Page
 Route::get('/sign-in', [UserController::class, 'login']);
 
+//Sign in user
+Route::post('users/authenticate', [UserController::class, 'authenticate']);
 
 // Sign User Out
 Route::get('/log-out', [UserController::class, 'logout']);
