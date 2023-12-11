@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BleedingRhymesController;
 
@@ -52,3 +52,10 @@ Route::get('/sign-up', [UserController::class, 'register']);
 
 //post user data to database
 Route::post('/register', [UserController::class, 'store']);
+
+
+
+//User Booking  a ticket
+Route::get('/book-now', [BookingController::class, 'booking']);
+
+//Booking Add to the Cart and Checkout

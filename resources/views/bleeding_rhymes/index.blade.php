@@ -143,7 +143,7 @@
                             Leave the planning to us and enjoy a memorable and hassle-
                             free event. From concept to execution, we've got you covered.
                         </p>
-                        <a class="btn" href="">Book Now</a>
+                        <a class="btn" href="/book-now">Book Now</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -154,7 +154,7 @@
                             Experience the power of words through captivating performances
                             that inspire, provoke thought, and leave a lasting impact.
                         </p>
-                        <a class="btn" href="">Book Now</a>
+                        <a class="btn" href="/book-now">Book Now</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -165,7 +165,7 @@
                             Ensure a seamless event flow and engage your audience with our
                             professional and experienced Matter of Ceremonies
                         </p>
-                        <a class="btn" href="">Book Now</a>
+                        <a class="btn" href="/book-now">Book Now</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -177,7 +177,7 @@
                             achieve your business goals with our tailored marketing
                             strategies.
                         </p>
-                        <a class="btn" href="">Book Now</a>
+                        <a class="btn" href="/book-now">Book Now</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -188,7 +188,7 @@
                             Make your project come alive with professional voice over
                             services that captivate and engage your audience.
                         </p>
-                        <a class="btn" href="">Book Now</a>
+                        <a class="btn" href="/book-now">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -218,7 +218,7 @@
                             Curabitur facilisis ornare velit non vulputate. Aliquam metus
                             tortor, auctor id gravida condimentum
                         </p>
-                        <a class="btn" href="">Book Now</a>
+                        <a class="btn" href="/book-now">Book Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -236,7 +236,7 @@
                             Curabitur facilisis ornare velit non vulputate. Aliquam metus
                             tortor, auctor id gravida condimentum
                         </p>
-                        <a class="btn" href="">Book Now</a>
+                        <a class="btn" href="/book-now">Book Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -254,7 +254,7 @@
                             Curabitur facilisis ornare velit non vulputate. Aliquam metus
                             tortor, auctor id gravida condimentum
                         </p>
-                        <a class="btn" href="">Book Now</a>
+                        <a class="btn" href="/book-now">Book Now</a>
                     </div>
                 </div>
             </div>
