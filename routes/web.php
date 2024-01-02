@@ -32,7 +32,7 @@ Route::get('/services',[BleedingRhymesController::class,'services']);
 Route::get('/speakers',[BleedingRhymesController::class,'speakers']);
 
 
-//BleedingRhymesUser Routes
+//BleedingRhymesUser Routes controllers
 Route::get('/sign-up',[BleedingUserController::class,'register']);
 Route::post('/sign-up',[BleedingUserController::class,'create']);
 
