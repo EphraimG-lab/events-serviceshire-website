@@ -12,7 +12,10 @@ class BleedingUserController extends Controller
     public function login(){
         return view('BleedingRhymesUser/sign-in');
     }
-    public function create(){
+    public function store(){
+        
+    }
+    public function authenticate(){
         
     }
     public function cart(){
