@@ -9,8 +9,7 @@ use App\Http\Controllers\BleedingRhymesController;
 | Web Routes for Bleeding Rhymes Creatives
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for Bleeding Rhymes Creatives
-. These
+| Here is where you can register web routes for Bleeding Rhymes Creatives.These
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
