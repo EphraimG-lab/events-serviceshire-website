@@ -1,3 +1,4 @@
-# events-serviceshire-website
+Events Services Hire Website
 
-        V 0.1.1
+
+    Front End Changes 

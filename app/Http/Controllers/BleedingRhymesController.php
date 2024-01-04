@@ -6,23 +6,35 @@ use Illuminate\Http\Request;
 
 class BleedingRhymesController extends Controller
 {
-
-    // Show Bleeding Rhymes About Page
-    public function about() {
-        return view('bleeding_rhymes.about');
+    public function index(){
+        return view("BleedingRhymesMain.index");
     }
-    // Show Bleeding Rhymes Contact Page
-
-    public function contact() {
-        return view('bleeding_rhymes.contact');
+    public function about(){
+        return view("BleedingRhymesMain.about");
     }
-     // Show Bleeding Rhymes Index Page
-     public function index() {
-        return view('bleeding_rhymes.index');
+    public function blog(){
+        return view("BleedingRhymesMain.blog");
     }
-      // Show Bleeding Rhymes Service Page
-      public function service() {
-        return view('bleeding_rhymes.service');
+    public function contact(){
+        return view("BleedingRhymesMain.contact");
+    }
+    public function cookies(){
+        return view("BleedingRhymesMain.cookies");
+    }
+    public function events(){
+        return view("BleedingRhymesMain.events");
+    }
+    public function FAQs(){
+        return view("BleedingRhymesMain.FAQs");
     }
     
+    public function privacy(){
+        return view("BleedingRhymesMain.privacy");
+    }
+    public function services(){
+        return view("BleedingRhymesMain.services");
+    }
+    public function speakers(){
+        return view("BleedingRhymesMain.speakersh");
+    }
 }
