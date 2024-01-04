@@ -42,7 +42,7 @@ Route::get('/speakers', [BleedingRhymesController::class,'speakers'])->name('spe
 
 
 
-Route::controller(BleedingUserController::class)->group(function() {
+Route::controller(BleedingUserController::class)->group(function () {
     Route::get('/sign-up', 'register')->name('register');
     Route::post('/store', 'store')->name('store');
     Route::get('/sign-in', 'login')->name('login');
