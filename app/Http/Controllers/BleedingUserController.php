@@ -63,6 +63,13 @@ class BleedingUserController extends Controller
     {
         return view('BleedingRhymesUser/buy-tickets');
     }
+      // Show all listings
+      public function index() {
+        return view('listings.index', [
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(6)
+        ]);
+    }
+
 
     // Logout User
     public function logout(Request $request)
