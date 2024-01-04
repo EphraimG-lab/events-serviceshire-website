@@ -27,17 +27,7 @@
 
     <!-- Main Stylesheet File -->
     <link href="{{ asset('assets/css/style.css ') }}" rel="stylesheet">
-    <style>
-        .carousel-indicators-bottom {
-            position: relative;
-            top: 15px;
-            /* Adjust according to your needs */
-            margin-left: -15px;
-            /* Adjust according to your needs */
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    </style>
+
 </head>
 
 <body>
@@ -61,8 +51,26 @@
                     <li><a href="/about">About</a></li>
                     <li><a href="/services">Services</a></li>
                     <li><a href="/events">Events</a></li>
-                    <li><a href="/sign-in">Sign In</a></li>
-                    <li><a href="/sign-up">Sign Up</a></li>
+                    <li class="dropdown">
+                        <!-- Display a welcome message with the username when logged in -->
+                        <a href="#" class="dropbtn">Hello {{ Auth::user()->username ?? 'User' }}</a>
+                        <ul class="dropdown-content">
+                            <!-- Show the logout button and form when the user is logged in -->
+                            @auth
+                                <form class="inline" method="POST" action="/logout">
+                                    @csrf
+                                    <button type="submit">
+                                        <i class="fa-solid fa-door-closed"></i> Sign Out
+                                    </button>
+                                </form>
+                            @else
+                                <!-- Show sign-in and sign-up links when the user is not logged in -->
+                                <li><a href="/sign-in">Sign In</a></li>
+                                <li><a href="/sign-up">Sign Up</a></li>
+                            @endauth
+                        </ul>
+                    </li>
+                    
                     <li><a href="/contact">Contact Us</a></li>
                     <li><a href="/FAQs">FAQs</a></li>
                     <li class="buy-tickets"><a href="/buy-tickets">Buy Tickets</a></li>
@@ -202,6 +210,7 @@
     <script src="{{ asset('assets/js/carousel.js') }}"></script>
     <!-- JavaScript Code for Testimoniol Carousel-->
     <script src="{{ asset('assets/js/testimonial-carousel.js') }}"></script>
+    <script  src="{{ asset('assets/js/navbar-dropdown-popup-on-mobil.js') }}"></script>
 </body>
 
 </html>

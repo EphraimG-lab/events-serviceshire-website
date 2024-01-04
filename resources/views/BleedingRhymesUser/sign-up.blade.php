@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
     <!--==========================
-          About Section
-        ============================-->
+                  About Section
+                ============================-->
     <section id="about">
         <div class="container">
             <div class="row">
@@ -18,8 +18,8 @@
                 <div class="col-lg-8 text-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="/">Home</a></li>
-                          <li class="breadcrumb-item"><a href="#">Sign Up</a></li>  
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Sign Up</a></li>
                             </li>
                         </ol>
                     </nav>
@@ -29,8 +29,8 @@
     </section>
 
     <!--==========================
-          Sign In Section
-        ============================-->
+                  Sign In Section
+                ============================-->
     <section id="contact" class="section-bg wow fadeInUp">
         <div class="container">
             <div class="section-header">
@@ -41,51 +41,80 @@
                 <div class="form ">
                     <div id="sendmessage">Sign Up</div>
                     <div id="errormessage"></div>
-                    <form action="/store" method="post" role="form" class="contactForm">
+                    <form action="/store" method="POST" role="form">
+
+
+                        @csrf
+
                         <div class="form-row">
                             <div class="form-group col-md-8">
                                 <input type="text" name="name" class="form-control" id="name"
-                                    placeholder="Your Full Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                <div class="validation"></div>
+                                    placeholder="Your Full Name"   value="{{old('name')}}">
+
+                                    @error('name')
+                                    <div class="text-danger"> {{ $message }} </div>
+                                @enderror
+
+
                             </div>
                             <div class="form-group col-md-8">
                                 <input type="text" name="username" class="form-control" id="username"
-                                    placeholder="Your Username" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                <div class="validation"></div>
+                                    placeholder="Your Username"   value="{{old('username')}}" >
+                                @error('username')
+                                    <div class="text-danger"> {{ $message }} </div>
+                                @enderror
                             </div>
                             <div class="form-group col-md-8">
                                 <input type="email" name="email" class="form-control" id="email"
-                                    placeholder="Your Email Address" data-rule="minlen:4" data-msg="Please enter at valid email" />
-                                <div class="validation"></div>
+                                    placeholder="Your Email Address"   value="{{old('email')}}" >
+                                @error('email')
+                                    <div class="text-danger"> {{ $message }} </div>
+                                @enderror
                             </div>
                             <div class="form-group col-md-8">
                                 <input type="number" name="phone" class="form-control" id="phone"
-                                    placeholder="Your Phone Contact" data-rule="minlen:4" data-msg="Please enter phone contact" />
-                                <div class="validation"></div>
+                                    placeholder="Your Phone Contact"   value="{{old('phone')}}">
+                                @error('phone')
+                                    <div class="text-danger"> {{ $message }} </div>
+                                @enderror
                             </div>
                             <div class="form-group col-md-8">
                                 <input type="password" name="password" class="form-control" id="password"
-                                    placeholder="Password" data-rule="minlen:4" data-msg="Please enter Password" />
-                                <div class="validation"></div>
+                                    placeholder="Password"   value="{{old('password')}}">
+
+                                @error('password')
+                                    <div class="text-danger"> {{ $message }} </div>
+                                @enderror
                             </div>
                             <div class="form-group col-md-8">
-                                <input type="password" name="confirmPassword" class="form-control" id="confirmPassword"
-                                    placeholder="Confirm Password" data-rule="minlen:8" data-msg="Please enter at least 8 chars" />
-                                <div class="validation"></div>
+                                <input type="password" name="password_confirmation" class="form-control"
+                                    id="confirmPassword" placeholder="Confirm Password"   value="{{old('password_confirmation')}}">
+                                    @error('password_confirmation')
+                                    <div class="text-danger"> {{ $message }} </div>
+                                @enderror
                             </div>
                             <div class="form-group col-md-8">
-                            <input type="text" name="company" class="form-control" id="company"
-                                    placeholder="Company Name [optional]" data-rule="minlen:5" data-msg="Please enter at company name" />
-                                <div class="validation"></div>
+                                <input type="text" name="company" class="form-control" id="company"
+                                    placeholder="Company Name [optional]"   value="{{old('company')}}">
+                                @error('company')
+                                    <div class="text-danger"> {{ $message }} </div>
+                                @enderror
                             </div>
                             <div class="form-group col-md-8">
                                 <input type="text" name="city" class="form-control" id="city"
-                                    placeholder="Your Town/City Location" data-rule="minlen:4" data-msg="Please enter at Town" />
-                                <div class="validation"></div>
+                                    placeholder="Your Town/City Location"   value="{{old('city')}}">
+                                @error('city')
+                                    <div class="text-danger"> {{ $message }} </div>
+                                @enderror
                             </div>
                         </div>
                         <div class="text-center">
                             <button type="submit" name="register">Sign Up</button>
+                        </div>
+                        <div class="text-center">
+                            <p>
+                                Already have an account ? <a href="/sign-in">Sign In</a>
+                            </p>
                         </div>
                     </form>
                 </div>
