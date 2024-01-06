@@ -68,47 +68,21 @@ class BleedingUserController extends Controller
         $tickets = Tickets::all();
         return view('BleedingRhymesUser.buy-tickets', compact('tickets'));
     }
-    // public function buyTicket($id)
-    // {
-    //     $ticket = Tickets::findOrFail($id);
-    //     $cart = session()->get('cart', []);
-    //     if(isset($cart[$id])) {
-    //         $cart[$id]['quantity']++;
-    //     } else {
-    //         $cart[$id] = [
-    //             "ticket_name" => $ticket->ticket_name,
-    //             "quantity" => 1,
-    //             "price" => $ticket->price,
-    //             "offering_1" => $ticket->offering_1,
-    //             "offering_2" => $ticket->offering_2,
-    //             "offering_3" => $ticket->offering_3,
-    //             "offering_4" => $ticket->offering_4,
-    //             "offering_5" => $ticket->offering_5,
-    //             "offering_6" => $ticket->offering_6,
-    //         ];
-    //     }
-        
-    //     session()->put('cart', $cart);
-    //     return redirect()->back()->with('success', 'Ticket has been added to the cart!');
-    // }
-
     public function buyTicket($id)
     {
-        try {
-            $ticket = Tickets::findOrFail($id);
-    
-            $cart = session()->get('cart', []);
-    
-            // Check if the ticket is already in the cart
-            if (isset($cart[$id])) {
-                // If the ticket is already in the cart, do not allow buying another one
-                return redirect()->back()->with('error', 'You can only purchase one ticket at a time. Please remove the existing ticket from the cart before adding a new one.');
-            }
-    
-            // Add the ticket to the cart
+        $ticket = Tickets::findOrFail($id);
+        $cart = session()->get('cart', []);
+        if (isset($cart[$id])) {
+            // If the ticket is already in the cart, do not allow buying another one
+            return redirect()->back()->with('error', 'You can only purchase one ticket at a time.
+                                      Please remove the existing ticket from the cart before adding a new one.');
+        }
+        if(isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+        } else {
             $cart[$id] = [
                 "ticket_name" => $ticket->ticket_name,
-                "quantity" => 1, // Set quantity to 1 for a new ticket
+                "quantity" => 1,
                 "price" => $ticket->price,
                 "offering_1" => $ticket->offering_1,
                 "offering_2" => $ticket->offering_2,
@@ -117,20 +91,10 @@ class BleedingUserController extends Controller
                 "offering_5" => $ticket->offering_5,
                 "offering_6" => $ticket->offering_6,
             ];
-    
-            // Update the cart in the session
-            session()->put('cart', $cart);
-    
-            // Calculate the total
-            $total = array_reduce($cart, function ($carry, $item) {
-                return $carry + ($item['quantity'] * $item['price']);
-            }, 0);
-    
-            // Return the view with the total
-            return view('BleedingRhymesUser.cart', compact('total'))->with('success', 'Ticket has been added to the cart!');
-        } catch (ModelNotFoundException $e) {
-            return redirect()->back()->with('error', 'Ticket not found.');
         }
+        
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Ticket has been added to the cart!');
     }
     public function updateCart(Request $request)
     {
