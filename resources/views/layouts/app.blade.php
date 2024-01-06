@@ -24,6 +24,7 @@
     <link href="{{ asset('assets/lib/animate/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/lib/venobox/venobox.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet">
 
     <!-- Main Stylesheet File -->
     <link href="{{ asset('assets/css/style.css ') }}" rel="stylesheet">
@@ -79,7 +80,7 @@
                             <span class="d-inline-block me-2">
                                 <i class="fa fa-shopping-cart fa-2x"></i>
                             </span>
-                            <span class="badge bg-danger rounded-pill text-white me-2 fa-2x">1</span>
+                            <span class="badge bg-danger rounded-pill text-white me-2 fa-2x">{{ count((array) session('cart')) }}</span>
                         </a>
                     </li>
 
@@ -204,6 +205,8 @@
     <!-- Contact Form JavaScript File -->
     <script src="{{ asset('assets/contactform/contactform.js') }}"></script>
 
+    <script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/js/dataTables.bootstrap5.min.js') }}"></script>
     <!--  Main Javascript File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <!-- JavaScript Code for Carousel to Play,Pause and slide across videos-->
@@ -211,6 +214,11 @@
     <!-- JavaScript Code for Testimoniol Carousel-->
     <script src="{{ asset('assets/js/testimonial-carousel.js') }}"></script>
     <script  src="{{ asset('assets/js/navbar-dropdown-popup-on-mobil.js') }}"></script>
+    <script>
+        new DataTable('#example');
+    </script>
+     
+        @yield('scripts')
 </body>
 
 </html>
