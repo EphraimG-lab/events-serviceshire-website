@@ -102,7 +102,7 @@ class BleedingUserController extends Controller
             $cart = session()->get('cart');
             $cart[$request->id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
-            session()->flash('success', 'Book added to cart.');
+            session()->flash('success', 'Ticket added to cart.');
         }
     }
    
@@ -114,9 +114,12 @@ class BleedingUserController extends Controller
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }
-            session()->flash('success', 'Book successfully deleted.');
+            session()->flash('success', 'Ticket successfully deleted.');
         }
     }
+     public function order(){
+        //Order
+     }
 
     // Logout User
     public function logout(Request $request)

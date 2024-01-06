@@ -55,3 +55,4 @@ Route::get('/buy-tickets', [BleedingUserController::class,'buy'])->name('buy')->
 Route::get('/ticket/{id}', [BleedingUserController::class, 'buyTicket'])->name('buy.ticket')->middleware('auth');
 Route::patch('/update-shopping-cart', [BleedingUserController::class, 'updateCart'])->name('update.sopping.cart') ->middleware('auth');
 Route::delete('/delete-cart-product', [BleedingUserController::class, 'deleteProduct'])->name('delete.cart.product')->middleware('auth');
+Route::post('/order',[BleedingUserController::class, 'cart'])->name('order')->middleware('auth');
