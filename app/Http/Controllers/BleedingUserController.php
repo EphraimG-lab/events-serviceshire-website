@@ -185,7 +185,7 @@ class BleedingUserController extends Controller
             // Commit transaction (optional)
             DB::commit();
 
-            // Clear cart after orders are created
+            // Clear cart after order are created
             session()->forget('cart');
 
             // Redirect to checkout
