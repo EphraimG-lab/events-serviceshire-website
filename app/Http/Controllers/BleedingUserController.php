@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Order;
 use App\Models\Tickets;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -81,6 +82,7 @@ class BleedingUserController extends Controller
             $cart[$id]['quantity']++;
         } else {
             $cart[$id] = [
+                "product_id" => $id,
                 "ticket_name" => $ticket->ticket_name,
                 "quantity" => 1,
                 "price" => $ticket->price,
@@ -95,6 +97,26 @@ class BleedingUserController extends Controller
         
         session()->put('cart', $cart);
         return redirect()->back()->with('success', 'Ticket has been added to the cart!');
+    }
+    public function order(Request $request)
+    {
+        // Retrieve cart data from session
+        $cartItems = session('cart');
+    
+        // Validate cart data (if necessary)
+        // ...
+    
+        // Create a new order
+        $order = Order::create([
+            'user_id' => auth()->user()->id,
+            'product_id' => $cartItems['id'],
+            'product_name' => $cartItems['ticket_name'],
+            'product_price' => $cartItems['price'],
+            'product_quantity' => $cartItems['quantity'],
+        ]);
+    
+        // Redirect to checkout
+        return redirect()->route('checkout')->with('success', 'Order placed successfully!');
     }
     public function updateCart(Request $request)
     {
@@ -117,9 +139,7 @@ class BleedingUserController extends Controller
             session()->flash('success', 'Ticket successfully deleted.');
         }
     }
-     public function order(){
-        //Order
-     }
+   
 
     // Logout User
     public function logout(Request $request)
