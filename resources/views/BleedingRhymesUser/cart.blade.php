@@ -131,7 +131,7 @@
                         </tr>
                         <tr>
                             <td colspan="5" class="text-right">
-                                <a href="{{ url('/order') }}" class="btn btn-danger">
+                                <a href="{{ url('/checkout') }}" class="btn btn-danger">
                                     Place Order</a>
                             </td>
                         </tr>
