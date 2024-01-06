@@ -3,18 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Tickets;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use PHPUnit\Framework\Attributes\Ticket;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class BleedingUserController extends Controller
 {
     public function register()
     {
-        return view('BleedingRhymesUser/sign-up');
+        return view('BleedingRhymesUser.sign-up');
     }
     public function login()
     {
-        return view('BleedingRhymesUser/sign-in');
+        return view('BleedingRhymesUser.sign-in');
     }
     public function store(Request $request)
     {
@@ -57,19 +60,99 @@ class BleedingUserController extends Controller
 
     public function cart()
     {
-        return view('BleedingRhymesUser/cart');
+        return view('BleedingRhymesUser.cart');
     }
     public function buy()
     {
-        return view('BleedingRhymesUser/buy-tickets');
+        
+        $tickets = Tickets::all();
+        return view('BleedingRhymesUser.buy-tickets', compact('tickets'));
     }
-      // Show all listings
-      public function index() {
-        return view('listings.index', [
-            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(6)
-        ]);
-    }
+    // public function buyTicket($id)
+    // {
+    //     $ticket = Tickets::findOrFail($id);
+    //     $cart = session()->get('cart', []);
+    //     if(isset($cart[$id])) {
+    //         $cart[$id]['quantity']++;
+    //     } else {
+    //         $cart[$id] = [
+    //             "ticket_name" => $ticket->ticket_name,
+    //             "quantity" => 1,
+    //             "price" => $ticket->price,
+    //             "offering_1" => $ticket->offering_1,
+    //             "offering_2" => $ticket->offering_2,
+    //             "offering_3" => $ticket->offering_3,
+    //             "offering_4" => $ticket->offering_4,
+    //             "offering_5" => $ticket->offering_5,
+    //             "offering_6" => $ticket->offering_6,
+    //         ];
+    //     }
+        
+    //     session()->put('cart', $cart);
+    //     return redirect()->back()->with('success', 'Ticket has been added to the cart!');
+    // }
 
+    public function buyTicket($id)
+    {
+        try {
+            $ticket = Tickets::findOrFail($id);
+    
+            $cart = session()->get('cart', []);
+    
+            // Check if the ticket is already in the cart
+            if (isset($cart[$id])) {
+                // If the ticket is already in the cart, do not allow buying another one
+                return redirect()->back()->with('error', 'You can only purchase one ticket at a time. Please remove the existing ticket from the cart before adding a new one.');
+            }
+    
+            // Add the ticket to the cart
+            $cart[$id] = [
+                "ticket_name" => $ticket->ticket_name,
+                "quantity" => 1, // Set quantity to 1 for a new ticket
+                "price" => $ticket->price,
+                "offering_1" => $ticket->offering_1,
+                "offering_2" => $ticket->offering_2,
+                "offering_3" => $ticket->offering_3,
+                "offering_4" => $ticket->offering_4,
+                "offering_5" => $ticket->offering_5,
+                "offering_6" => $ticket->offering_6,
+            ];
+    
+            // Update the cart in the session
+            session()->put('cart', $cart);
+    
+            // Calculate the total
+            $total = array_reduce($cart, function ($carry, $item) {
+                return $carry + ($item['quantity'] * $item['price']);
+            }, 0);
+    
+            // Return the view with the total
+            return view('BleedingRhymesUser.cart', compact('total'))->with('success', 'Ticket has been added to the cart!');
+        } catch (ModelNotFoundException $e) {
+            return redirect()->back()->with('error', 'Ticket not found.');
+        }
+    }
+    public function updateCart(Request $request)
+    {
+        if($request->id && $request->quantity) {
+            $cart = session()->get('cart');
+            $cart[$request->id]["quantity"] = $request->quantity;
+            session()->put('cart', $cart);
+            session()->flash('success', 'Book added to cart.');
+        }
+    }
+   
+    public function deleteProduct(Request $request)
+    {
+        if($request->id) {
+            $cart = session()->get('cart');
+            if(isset($cart[$request->id])) {
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash('success', 'Book successfully deleted.');
+        }
+    }
 
     // Logout User
     public function logout(Request $request)

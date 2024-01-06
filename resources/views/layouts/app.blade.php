@@ -80,7 +80,7 @@
                             <span class="d-inline-block me-2">
                                 <i class="fa fa-shopping-cart fa-2x"></i>
                             </span>
-                            <span class="badge bg-danger rounded-pill text-white me-2 fa-2x">1</span>
+                            <span class="badge bg-danger rounded-pill text-white me-2 fa-2x">{{ count((array) session('cart')) }}</span>
                         </a>
                     </li>
 
@@ -217,6 +217,8 @@
     <script>
         new DataTable('#example');
     </script>
+     
+        @yield('scripts')
 </body>
 
 </html>

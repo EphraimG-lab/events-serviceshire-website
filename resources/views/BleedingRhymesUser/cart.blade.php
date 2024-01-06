@@ -8,7 +8,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12 text-center mt-5">
-              <h2>Buy Tickets to Book a slot</h2>
+              <h2>Ticket Shopping Cart</h2>
               <p>
                 Sed nam ut dolor qui repellendus iusto odit. Possimus inventore
                 eveniet accusamus error amet eius aut accusantium et. Non odit
@@ -25,14 +25,14 @@
     ============================-->
     <section id="buy-tickets" class="section-with-bg wow fadeInUp">
       <div class="container">
-        <table id="example" class="table table-bordered">
+        <table class="table table-bordered">
           <thead>
               <tr>
-                  <th>Product</th>
-                  <th>Price</th>
-                  <th>Total</th>
-                  <th></th>
-              </tr>
+                  <th>Ticket</th>
+                  <th>Offering</th>
+                  <th>Price</th>   
+                  <th>Delete</th>              
+                 </tr>
           </thead>
           <tbody>
               @php $total = 0 @endphp
@@ -40,17 +40,18 @@
                   @foreach(session('cart') as $id => $details)
                        
                       <tr rowId="{{ $id }}">
-                          <td data-th="Product">
-                              <div class="row">
-                                  <div class="col-sm-3 hidden-xs"><img src="{{ $details['image'] }}" class="card-img-top"/></div>
-                                  <div class="col-sm-9">
-                                      <h4 class="nomargin">{{ $details['name'] }}</h4>
-                                  </div>
-                              </div>
+                          <td>
+                            {{ $details['ticket_name'] }}
                           </td>
-                          <td data-th="Price">Kes{{ $details['price'] }}</td>
-                          
-                          <td data-th="Subtotal" class="text-center"></td>
+                          <td data-th="Price">
+                            {{ $details['offering_1'] }},<br>
+                            {{ $details['offering_2'] }},<br>
+                            {{ $details['offering_3'] }},<br>
+                            {{ $details['offering_4'] }},<br>
+                            {{ $details['offering_5'] }},<br>
+                            {{ $details['offering_6'] }}
+                          </td>
+                          <td data-th="Price"><i>Kes</i> {{ $details['price'] }}</td>
                           <td class="actions">
                               <a class="btn btn-outline-danger btn-sm delete-product"><i class="fa fa-trash-o"></i></a>
                           </td>
@@ -59,10 +60,18 @@
               @endif
           </tbody>
           <tfoot>
+            <tr>
+              <td colspan="2"  class="#">
+                Total
+              </td>
+              <td colspan="2">
+                <i>Kes</i> {{ $total }}
+            </td>
+            </tr>
               <tr>
                   <td colspan="5" class="text-right">
                       <a href="{{ url('/buy-tickets') }}" class="btn btn-primary"><i class="fa fa-angle-left"></i> Continue Shopping</a>
-                      <button class="btn btn-danger">Checkout</button>
+                      <a href="{{ url('/checkout') }}" class="btn btn-danger"> Checkout</a>
                   </td>
               </tr>
           </tfoot>
@@ -70,45 +79,45 @@
       @endsection
          
       @section('scripts')
-      <script type="text/javascript">
-         
-          // $(".edit-cart-info").change(function (e) {
-          //     e.preventDefault();
-          //     var ele = $(this);
-          //     $.ajax({
-          //         url: '{{ route('/buy-tickets') }}',
-          //         method: "patch",
-          //         data: {
-          //             _token: '{{ csrf_token() }}', 
-          //             id: ele.parents("tr").attr("rowId"), 
-          //         },
-          //         success: function (response) {
-          //            window.location.reload();
-          //         }
-          //     });
-          // });
-         
-          // $(".delete-product").click(function (e) {
-          //     e.preventDefault();
-         
-          //     var ele = $(this);
-         
-          //     if(confirm("Do you really want to delete?")) {
-          //         $.ajax({
-          //             url: '{{ route('/buy-tickets') }}',
-          //             method: "DELETE",
-          //             data: {
-          //                 _token: '{{ csrf_token() }}', 
-          //                 id: ele.parents("tr").attr("rowId")
-          //             },
-          //             success: function (response) {
-          //                 window.location.reload();
-          //             }
-          //         });
-          //     }
-          // });
-         
-      </script>
+      <script>
+   
+        $(".edit-cart-info").change(function (e) {
+            e.preventDefault();
+            var ele = $(this);
+            $.ajax({
+                url: '{{ route('update.sopping.cart') }}',
+                method: "patch",
+                data: {
+                    _token: '{{ csrf_token() }}', 
+                    id: ele.parents("tr").attr("rowId"), 
+                },
+                success: function (response) {
+                   window.location.reload();
+                }
+            });
+        });
+       
+        $(".delete-product").click(function (e) {
+            e.preventDefault();
+       
+            var ele = $(this);
+       
+            if(confirm("Do you really want to delete?")) {
+                $.ajax({
+                    url: '{{ route('delete.cart.product') }}',
+                    method: "DELETE",
+                    data: {
+                        _token: '{{ csrf_token() }}', 
+                        id: ele.parents("tr").attr("rowId")
+                    },
+                    success: function (response) {
+                        window.location.reload();
+                    }
+                });
+            }
+        });
+       
+    </script>
       </div>
       
     </section>

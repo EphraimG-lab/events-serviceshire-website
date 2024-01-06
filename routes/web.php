@@ -50,5 +50,8 @@ Route::controller(BleedingUserController::class)->group(function () {
     Route::post('/logout', 'logout')->name('logout');
 });
 
-Route::get('/cart', [BleedingUserController::class,'cart'])->name('cart');
-Route::get('/buy-tickets', [BleedingUserController::class,'buy'])->name('buy');
+Route::get('/cart', [BleedingUserController::class,'cart'])->name('cart')->middleware('auth');
+Route::get('/buy-tickets', [BleedingUserController::class,'buy'])->name('buy')->middleware('auth');
+Route::get('/ticket/{id}', [BleedingUserController::class, 'buyTicket'])->name('buy.ticket')->middleware('auth');
+Route::patch('/update-shopping-cart', [BleedingUserController::class, 'updateCart'])->name('update.sopping.cart') ->middleware('auth');
+Route::delete('/delete-cart-product', [BleedingUserController::class, 'deleteProduct'])->name('delete.cart.product')->middleware('auth');
