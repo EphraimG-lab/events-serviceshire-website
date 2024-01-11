@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BleedingUserController;
 use App\Http\Controllers\BleedingRhymesController;
@@ -31,6 +32,11 @@ Route::get('/privacy', [BleedingRhymesController::class,'privacy'])->name('priva
 Route::get('/services', [BleedingRhymesController::class,'services'])->name('services');
 Route::get('/speakers', [BleedingRhymesController::class,'speakers'])->name('speakers');
 
+Route::get('/book/{id}', [BleedingRhymesController::class, 'book'])->name('book')->middleware('auth');
+Route::get('/book', [BleedingRhymesController::class, 'showBookView'])->name('book.view')->middleware('auth');
+Route::patch('/update-booked-service', [BleedingRhymesController::class, 'updateBookedService'])->name('update.booked.service') ->middleware('auth');
+Route::delete('/delete-booked-service', [BleedingRhymesController::class, 'deleteBookedService'])->name('delete.booked.service')->middleware('auth');
+
 
 //BleedingRhymesUser Routes controllers
 // Route::get('/sign-up', [BleedingUserController::class,'register'])->name('register');
@@ -55,5 +61,9 @@ Route::get('/buy-tickets', [BleedingUserController::class,'buy'])->name('buy')->
 Route::get('/ticket/{id}', [BleedingUserController::class, 'buyTicket'])->name('buy.ticket')->middleware('auth');
 Route::patch('/update-shopping-cart', [BleedingUserController::class, 'updateCart'])->name('update.sopping.cart') ->middleware('auth');
 Route::delete('/delete-cart-product', [BleedingUserController::class, 'deleteProduct'])->name('delete.cart.product')->middleware('auth');
-Route::post('/order',[BleedingUserController::class, 'order'])->name('order')->middleware('auth');
-// Route::get('/checkout', [BleedingUserController::class, 'checkout'])->name('checkout')->middleware('auth');
+Route::get('/order', [BleedingUserController::class, 'order'])->name('order')->middleware('auth');
+Route::get('/checkout', [BleedingUserController::class, 'checkout'])->name('checkout')->middleware('auth');// In your routes file
+Route::get('/payment/{id}', [BleedingUserController::class, 'payment'])
+    ->name('payment')
+    ->middleware('auth');
+Route::post('/mpesa/callback', [BleedingUserController::class, 'mpesaCallback'])->name('mpesa.stk.push')->middleware('auth');
