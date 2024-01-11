@@ -154,13 +154,13 @@
             </div>
 
             <div class="row">
-
+                @foreach($services as $service)
                 <div class="col-lg-4 col-md-6">
                     <div class="hotel">
                         <div class="hotel-img">
-                            <img src="{{ asset('assets/images-now/service-1.jpg ') }}" alt="Service 1" class="img-fluid">
+                            <img src="{{ asset('assets/images-now/' . $service->service_image) }}" alt="Service 1" class="img-fluid">
                         </div>
-                        <h3><a href="#">Event Organizing</a></h3>
+                        <h3><a href="#">{{$service->service_name}}</a></h3>
                         <div class="stars">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -168,99 +168,14 @@
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                         </div>
-                        <p>Leave the planning to us and enjoy a memorable and hassle- free event. From concept to
-                            execution, we've got you covered.</p>
+                        <p>{{$service->service_description}}</p>
                         <div class="m-3">
-                            <a class="btn" href="/book-now">Book Now</a>
+                            <a class="btn btn-primary" href="{{ route('book', $service->id) }}">Book Now</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="hotel">
-                        <div class="hotel-img">
-                            <img src="{{ asset('assets/images-now/service-2.jpg') }}" alt="Service 2" class="img-fluid">
-                        </div>
-                        <h3><a href="#">Spoken Word Poetry</a></h3>
-                        <div class="stars">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-full"></i>
-                        </div>
-                        <p>Experience the power of words through captivating performances that inspire, provoke thought,
-                            and leave a lasting impact.</p>
-                        <div class="m-3">
-                            <a class="btn" href="/book-now">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="hotel">
-                        <div class="hotel-img">
-                            <img src="{{ asset('assets/images-now/service-3.jpg') }}" alt="Service 3" class="img-fluid">
-                        </div>
-                        <h3><a href="#">Corporate MC</a></h3>
-                        <div class="stars">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <p>Ensure a seamless event flow and engage your audience with our professional and experienced
-                            Matter of Ceremonies</p>
-                        <div class="m-3">
-                            <a class="btn" href="/book-now">Book Now</a>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="hotel">
-                        <div class="hotel-img">
-                            <img src="{{ asset('assets/images-now/service-4.jpg') }}" alt="Service 4" class="img-fluid">
-                        </div>
-                        <h3><a href="#">Marketing</a></h3>
-                        <div class="stars">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <p>Boost your brand's visibility, reach your target audience, and achieve your business goals
-                            with our tailored marketing strategies.</p>
-                        <div class="m-3">
-                            <a class="btn" href="/book-now">Book Now</a>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="hotel">
-                        <div class="hotel-img">
-                            <img src="{{ asset('assets/images-now/service-5.jpg') }}" alt="Service 5" class="img-fluid">
-                        </div>
-                        <h3><a href="#">Voice Overs</a></h3>
-                        <div class="stars">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <p>Make your project come alive with professional voice over services that captivate and engage
-                            your audience.</p>
-                        <div class="m-3">
-                            <a class="btn" href="/book-now">Book Now</a>
-                        </div>
-                    </div>
-
-                </div>
+                @endforeach
             </div>
         </div>
 
