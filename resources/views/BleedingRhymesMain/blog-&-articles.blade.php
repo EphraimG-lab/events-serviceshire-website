@@ -9,9 +9,8 @@
                 <div class="col-lg-12 text-center mt-5">
                     <h2>About Us</h2>
                     <p>
-                        Sed nam ut dolor qui repellendus iusto odit. Possimus inventore
-                        eveniet accusamus error amet eius aut accusantium et. Non odit
-                        consequatur repudiandae sequi ea odio molestiae.
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sapiente vel sit maxime nisi, possimus sed quibusdam exercitationem porro consequuntur, 
+                     iusto vero, fuga reprehenderit repudiandae magni qui eos quod earum.
                     </p>
                 </div>
                 <div class="col-lg-8 text-center">
