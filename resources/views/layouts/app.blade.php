@@ -61,9 +61,11 @@
                                 <form class="inline" method="POST" action="/logout">
                                     @csrf
                                     <button type="submit">
-                                        <i class="fa-solid fa-door-closed"></i> Sign Out
+                                   Sign Out
                                     </button>
                                 </form>
+                                <br>
+                                <li><a href="/book">Booked Service's</a></li>
                             @else
                                 <!-- Show sign-in and sign-up links when the user is not logged in -->
                                 <li><a href="/sign-in">Sign In</a></li>
