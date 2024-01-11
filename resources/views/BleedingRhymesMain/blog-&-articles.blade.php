@@ -11,8 +11,7 @@
                     <p>
                         Sed nam ut dolor qui repellendus iusto odit. Possimus inventore
                         eveniet accusamus error amet eius aut accusantium et. Non odit
-                        consequatur repudiandae sequi ea odio molestiae. Enim possimus
-                        sunt inventore in est ut optio sequi unde.
+                        consequatur repudiandae sequi ea odio molestiae.
                     </p>
                 </div>
                 <div class="col-lg-8 text-center">
