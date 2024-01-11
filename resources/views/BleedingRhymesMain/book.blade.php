@@ -46,7 +46,7 @@
                                             {{ $details['service_charges'] }}
                                         </td>
                                         <td class="actions">
-                                            <a class="btn btn-outline-danger btn-sm delete-product"><i class="fa fa-trash-o"></i></a>
+                                            <a class="btn btn-outline-danger btn-sm delete-service"><i class="fa fa-trash-o"></i></a>
                                         </td>
                                     </tr>
                                     @php $total += $details['service_charges'] * $details['quantity'] @endphp
@@ -80,7 +80,7 @@
 
 @section('scripts')
     <script>
-        $(".edit-cart-info").change(function(e) {
+        $(".edit-booking-info").change(function(e) {
             e.preventDefault();
             var ele = $(this);
             $.ajax({
@@ -96,7 +96,7 @@
             });
         });
 
-        $(".delete-product").click(function(e) {
+        $(".delete-service").click(function(e) {
             e.preventDefault();
 
             var ele = $(this);
