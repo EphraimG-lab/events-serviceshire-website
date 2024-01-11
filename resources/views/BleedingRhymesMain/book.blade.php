@@ -77,3 +77,43 @@
 </section>
 
 @endsection
+
+@section('scripts')
+    <script>
+        $(".edit-cart-info").change(function(e) {
+            e.preventDefault();
+            var ele = $(this);
+            $.ajax({
+                url: '{{ route('update.booked.service') }}',
+                method: "patch",
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    id: ele.parents("tr").attr("rowId"),
+                },
+                success: function(response) {
+                    window.location.reload();
+                }
+            });
+        });
+
+        $(".delete-product").click(function(e) {
+            e.preventDefault();
+
+            var ele = $(this);
+
+            if (confirm("Do you really want to delete?")) {
+                $.ajax({
+                    url: '{{ route('delete.booked.service') }}',
+                    method: "DELETE",
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: ele.parents("tr").attr("rowId")
+                    },
+                    success: function(response) {
+                        window.location.reload();
+                    }
+                });
+            }
+        });
+    </script>
+@endsection
